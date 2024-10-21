@@ -4,15 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        .contenedor-flexible{
+            /* background-color: grey; */
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: none; /*alineacion de items centrados en la linea flexible */
+            flex-wrap: nowrap; /*para que al reducir los elementos colapesn abajo*/
+            height: 100vh;
+            align-content: flex-start; 
+        }
+
+        .elemento-flexible{
+            font-size: 2rem;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* position:relative; */
+            background-image: url('');
+        }
+
+
+        .uno{
+            background-color: red;
+            width:50%;
+            height: 100vh;
+            
+            /*flex-basis: 350px;*/
+            flex-grow: 1;
+            flex-shrink: 1;
+        /*el ancho o el tamanio flexible a lo largo del eje principal*/
+            
+    }
+
+        .columna-dos-tres {
+            display: flex;
+            flex-direction: column; /* Organiza los elementos en columna */
+            width: 50%; /* La otra mitad de la pantalla */
+        }
+
+        .dos{
+            background-color: orange;
+            width:100%; 
+            height: 50%;
+            /* flex-basis: 50px; */
+            /* flex-grow: 2; */
+            /* flex-shrink: 1; */
+
+        }
+        .tres{
+            background-color: blue;
+            width:100%; 
+            height: 50%;
+            /* flex-basis: 350px; */
+            /* flex-grow: 1; */
+            /* flex-shrink: 1; */
+        }
+
+        .opaco{
+            background-color: rgb(167, 165, 165);
+
+        }
+
+    </style>
 </head>
 <body>
     <div class="contenedor-flexible">
-        <div class="elemento-flexible">1</div>
-        <div class="elemento-flexible">2</div>
-        <div class="elemento-flexible">3</div>
-        <div class="elemento-flexible">4</div>
-        <div class="elemento-flexible">5</div>
+        <!-- "elemento-flexible uno" ... este es un nombre de clase(elemento-flexible) ... este es otro nombre(uno), pero que tiene las propiedades del anterior -->
+        <div class="elemento-flexible uno">
+            <div class="texto">Only $17</div>
+        </div>
+        <div class="opaco"></div>
+
+        <div class="columna-dos-tres">
+            <div class="elemento-flexible dos">
+                <div class="texto">Only $15</div>
+            </div>
+            <div class="elemento-flexible tres">
+                <div class="texto">Only $13</div>
+        </div>
     </div>
+
+    </div>
+
+
     
 </body>
 </html>
